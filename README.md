@@ -1,8 +1,3 @@
-Teamy is an internal social network for employees of an organization. This application is to be used to facilitate more interaction between colleagues and promote team bonding.
-
-This repo is for the frontend code. Built with react, react redux for state management. Style Guide is Airbnb and Eslint for linting.
-
-
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
