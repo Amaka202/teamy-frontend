@@ -2,7 +2,6 @@ body{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #2144C4;
   font: 100%;
 }
 
@@ -14,21 +13,31 @@ body{
   margin-bottom: 2rem;
 }
 
-.error{
-  font-size: 13px;
+.required-star{
   color: red;
-  font-style: italic;
+}
+
+.radio-input{
+  color: red;
+  width: 100%;
 }
 
 .btn{
+  cursor: pointer;
   background-color: #2144C4;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   padding: 13px;
+  border-radius: 5px;
+  border: none;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 .btn-div{
   text-align: center;
+}
+
+.nav{
+  padding-top: 0.5rem;
 }
 
 .nav ul{
@@ -38,7 +47,7 @@ body{
 }
 
 .nav ul li{
-  list-style: none;
+  list-style-type: none;
   margin-right: 1rem;
-
+  text-decoration: none;
 }

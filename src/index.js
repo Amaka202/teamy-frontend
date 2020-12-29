@@ -7,15 +7,15 @@ import { ChakraProvider } from '@chakra-ui/react';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-const ThemedApp = () => (
-  <ChakraProvider>
-    <App />
-  </ChakraProvider>
-);
+// const ThemedApp = () => (
+//   <ChakraProvider>
+//     <App />
+//   </ChakraProvider>
+// );
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <ThemedApp />
+      <App />
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root'),
