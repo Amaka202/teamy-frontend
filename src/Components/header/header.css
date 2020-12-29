@@ -1,0 +1,45 @@
+body {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .one, .two, .three, .four {
+    background: red;
+    border-bottom: 20px solid blue;
+    height: 200px;
+    width: 200px;
+    border-radius: 50% 0 50% 0;
+    display: flex;
+    margin: 10px;
+  }
+  
+  .two {
+    border-radius: 0% 50% 0% 50%;
+  }
+  
+  h1 {
+    margin: auto;
+    color: red;
+    font-family: 'Helvetica';
+    font-size: 9.7em;
+  }
+  
+  .keyLine {
+    height: 40px;
+    background: blue;
+    width: 860px;
+    margin: auto;
+  }
+  
+  .shape-container {
+    display: flex;
+    margin: auto;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+  }

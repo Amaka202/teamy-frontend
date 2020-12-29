@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+/* eslint-disable react/jsx-filename-extension */
+import React from 'react';
+// import ReactDOM from 'react-dom';
 import './App.css';
+import { Route, Switch } from "react-router-dom";
+import Login from './Components/login/Login';
+import Signup from './Components/signup/Signup';
+import Users from './Components/users/Users'
+import Posts from './Components/posts/Posts'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Switch>
+        {/* <Route path='/' exact component={Home} /> */}
+        <Route path='/login' exact component={Login} />
+        <Route path='/posts' exact component={Posts} />
+        <Route path='/signup' exact component={Signup} />
+        <Route path='/users' exact component={Users} />
+      </Switch>
     </div>
   );
 }

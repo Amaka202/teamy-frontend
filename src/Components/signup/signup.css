@@ -1,0 +1,46 @@
+.signup-container{
+    width: 100vw;
+    /* height: 100vh; */
+    color: black;
+    background-color: #2144C4;
+    /* clip-path: circle(63.7% at 50% 49%); */
+    padding-bottom: 5rem;
+}
+
+.signup-form{
+    margin: auto;
+    margin-top: 2rem;
+    /* margin-bottom: 10rem; */
+    width: 50%;
+    /* height: 60%; */
+    background-color: #ffffffee;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+}
+
+.signup-form input{
+    border-radius: 10px;
+    border: 1px solid grey;
+    padding: 10px;
+    display: inline-block;
+    width: 100%;
+}
+
+.signup-form label{
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.signup-form select{
+    border: 1px solid grey;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    color: rgb(68, 67, 67);
+}
+
+.signup-form radio{
+    display: block;
+}
