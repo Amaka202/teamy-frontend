@@ -6,11 +6,6 @@ import { BrowserRouter } from "react-router-dom";
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-// const ThemedApp = () => (
-//   <ChakraProvider>
-//     <App />
-//   </ChakraProvider>
-// );
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>

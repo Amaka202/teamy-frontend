@@ -5,19 +5,18 @@
     color: rgb(207, 199, 199);
 }
 
-.bg-img{
+/* .bg-img{
     background-image: url(./postImgs/brainstorming_session__monochromatic.svg);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
-}
+} */
 
-.bg-color{
-    background-color:  rgba(59, 59, 56, 0.7);
-}
+/* .bg-color{
+} */
 
 .post-container{
-    padding: 3% 10%;
+    padding: 4% 10%;
 }
 
 .post{

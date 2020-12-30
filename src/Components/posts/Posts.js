@@ -1,7 +1,7 @@
 import React from 'react';
 import './posts.css';
-import WriteArticle from "../writearticle/WriteArticle"
-import Logo from '../logo/Logo';
+// import Logo from "../logo/Logo"
+
 
 const postData = [
     {
@@ -89,6 +89,7 @@ function Post() {
     })
     return (
         <div>
+            <h1>hey</h1>
             <div className="bg-img">
                 <div className="bg-color">
                     <div className="post-container">
@@ -96,8 +97,6 @@ function Post() {
                     </div>
                 </div>
             </div>
-             {/* <WriteArticle /> */}
-             {/* <Logo /> */}
         </div>
     )
 }
