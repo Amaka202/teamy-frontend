@@ -3,6 +3,8 @@ body{
   padding: 0;
   box-sizing: border-box;
   font: 100%;
+  background-color:  rgba(34, 34, 34, 0.7);
+
 }
 
 /* .App {
@@ -34,20 +36,4 @@ body{
 
 .btn-div{
   text-align: center;
-}
-
-.nav{
-  padding-top: 0.5rem;
-}
-
-.nav ul{
-  display: flex;
-  justify-content: flex-end;
-  align-content: flex-end;
-}
-
-.nav ul li{
-  list-style-type: none;
-  margin-right: 1rem;
-  text-decoration: none;
 }

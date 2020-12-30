@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import Logo from '../logo/Logo';
-import Nav from '../Nav';
+import Logo from './Logo';
+import Nav from './Nav';
 
 export default class Header extends Component {
     render() {
         return (
-            <div>
+            <div className="header-container">
                 <Logo />
                <Nav /> 
             </div>

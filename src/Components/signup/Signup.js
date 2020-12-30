@@ -2,7 +2,7 @@ import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import './signup.css'
-import Nav from '../Nav'
+import Nav from '../header/Nav'
 import TextError from '../texterror/TextError'
 
 function Signup() {
