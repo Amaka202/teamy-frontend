@@ -2,6 +2,18 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    color: rgb(207, 199, 199);
+}
+
+.bg-img{
+    background-image: url(./postImgs/brainstorming_session__monochromatic.svg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.bg-color{
+    background-color:  rgba(59, 59, 56, 0.7);
 }
 
 .post-container{
@@ -20,7 +32,7 @@
 }
 
 .img-flex{
-    width: 50%;
+    width: 30%;
 }
 
 .post-img-div{
@@ -40,8 +52,7 @@
 }
 
 .name-article-div{
-    /* border: 2px solid red; */
-    width: 50%;
+    width: 70%;
 }
 
 .name-div{
