@@ -2,8 +2,7 @@ import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import './login.css'
-import Nav from '../header/Nav'
-
+import Header from "../header/Header"
 function Signup() {
   const initialValues = {
     email: "",
@@ -21,7 +20,7 @@ function Signup() {
   return (
     <div className="login-container">
       <div className="header">
-        <Nav />
+        <Header />
       </div>
       <div className="login-form">
       <Formik

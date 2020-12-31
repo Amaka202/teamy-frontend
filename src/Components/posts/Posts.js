@@ -1,6 +1,6 @@
 import React from 'react';
+import Header from '../header/Header';
 import './posts.css';
-// import Logo from "../logo/Logo"
 
 
 const postData = [
@@ -89,7 +89,7 @@ function Post() {
     })
     return (
         <div>
-            <h1>hey</h1>
+            <Header />
             <div className="bg-img">
                 <div className="bg-color">
                     <div className="post-container">
