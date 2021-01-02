@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/teamy-frontend/static/css/main.16fcc870.chunk.css",
+    "main.js": "/teamy-frontend/static/js/main.671703bd.chunk.js",
+    "main.js.map": "/teamy-frontend/static/js/main.671703bd.chunk.js.map",
+    "runtime-main.js": "/teamy-frontend/static/js/runtime-main.c15b8fcd.js",
+    "runtime-main.js.map": "/teamy-frontend/static/js/runtime-main.c15b8fcd.js.map",
+    "static/js/2.515f94d0.chunk.js": "/teamy-frontend/static/js/2.515f94d0.chunk.js",
+    "static/js/2.515f94d0.chunk.js.map": "/teamy-frontend/static/js/2.515f94d0.chunk.js.map",
+    "static/js/3.4ff26e38.chunk.js": "/teamy-frontend/static/js/3.4ff26e38.chunk.js",
+    "static/js/3.4ff26e38.chunk.js.map": "/teamy-frontend/static/js/3.4ff26e38.chunk.js.map",
+    "index.html": "/teamy-frontend/index.html",
+    "static/css/main.16fcc870.chunk.css.map": "/teamy-frontend/static/css/main.16fcc870.chunk.css.map",
+    "static/js/2.515f94d0.chunk.js.LICENSE.txt": "/teamy-frontend/static/js/2.515f94d0.chunk.js.LICENSE.txt",
+    "static/media/gifIcon.60810453.png": "/teamy-frontend/static/media/gifIcon.60810453.png",
+    "static/media/home.c663b13a.png": "/teamy-frontend/static/media/home.c663b13a.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c15b8fcd.js",
+    "static/js/2.515f94d0.chunk.js",
+    "static/css/main.16fcc870.chunk.css",
+    "static/js/main.671703bd.chunk.js"
+  ]
+}
