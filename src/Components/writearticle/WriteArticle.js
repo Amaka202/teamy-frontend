@@ -2,7 +2,9 @@ import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import './writearticle.css'
-import TextError from "../texterror/TextError"
+import TextError from "../texterror/TextError";
+import sendIcon from "./Img/transparentSendIcon.jpg";
+import gifIcon from "./Img/gifIcon.png";
 
 function WriteArticle() {
   const initialValues = {
@@ -27,29 +29,42 @@ function WriteArticle() {
       onSubmit={onSubmit}
     >
         <Form>
-        <div className='form-control'>
-          <label htmlFor="title">Title</label>
+        <div className='article-div'>
+          <label htmlFor="title">
+            Title
+            <span className="required-star"> *</span>
+          </label>
           <Field
             type='title'
             id='title'
             name='title'
           />
-        <ErrorMessage name="title" component={TextError}/>
+          <ErrorMessage name="title" component={TextError}/>
         </div>
 
-        <div className='form-control'>
-          <label htmlFor='article'>Post</label>
+        <div className='article-div'>
+          <label htmlFor='article'>
+            Post
+            <span className="required-star"> *</span>
+          </label>
           <Field
             as="textarea"
             type='article'
             id='article'
             name='article'
           />
+          <ErrorMessage name="article" component={TextError}/>
         </div>
-        <ErrorMessage name="article" component={TextError}/>
         
-        <div className="btn-div">
-          <button type="submit" className="btn">Submit</button>
+        <div className="btn-gif-div">
+          <div>
+            <button type="submit" className="send-btn">
+              <img src={sendIcon} alt="send icon" />
+            </button>
+          </div>
+          <div className="gif-div">
+            <img src={gifIcon} alt="gifIcon"/>
+          </div>
         </div>
     </Form>
     </Formik>

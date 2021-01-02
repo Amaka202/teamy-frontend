@@ -1,0 +1,46 @@
+/* .write-container{
+    text-align: center;
+} */
+
+.write-container form{
+    padding: 2rem;
+    width: 30em;
+    margin: auto;
+    border: 1px solid grey;
+}
+
+.write-container .article-div{
+    margin-bottom: 1em;
+}
+
+.write-container input, label, textarea{
+    width: 100%;
+}
+
+.write-container input, textarea{
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+}
+
+.write-container label{
+    font-weight: 400;
+    font-size: 1.2em;
+}
+
+.write-container textarea{
+
+}
+
+.btn-gif-div{
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+}
+
+.btn-gif-div img{
+    cursor: pointer;
+    width: 3em;
+    height: 3em;
+    object-fit: contain;
+}

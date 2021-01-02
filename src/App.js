@@ -7,7 +7,6 @@ import Login from './Components/login/Login';
 import Signup from './Components/signup/Signup';
 import Users from './Components/users/Users'
 import Posts from './Components/posts/Posts'
-import Header from './Components/header/Header';
 import Home from './Components/home/Home';
 
 function App() {
@@ -19,7 +18,6 @@ function App() {
         <Route path='/posts' exact component={Posts} />
         <Route path='/signup' exact component={Signup} />
         <Route path='/users' exact component={Users} />
-        <Route path='/header' exact component={Header} />
       </Switch>
     </div>
   );
