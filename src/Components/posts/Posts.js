@@ -2,7 +2,6 @@ import React from 'react';
 import Header from '../header/Header';
 import './posts.css';
 
-
 const postData = [
     {
         profile_img: "https://robohash.org/1",
@@ -70,7 +69,7 @@ function Post() {
         <div className="pic-name-div">
             <div className="img=flex">
                 <div className="post-img-div">
-                    <img src={val.profile_img} alt="profile-pic"/>
+                    <img src={`https://res.cloudinary.com/amaka01/image/upload/v1609578087/cg3mtemxniugidu73ewn.jpg`} alt="dp"/>
                 </div>
             </div>
             <div className="name-article-div">

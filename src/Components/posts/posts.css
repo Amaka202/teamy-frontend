@@ -5,16 +5,6 @@
     color: rgb(207, 199, 199);
 }
 
-/* .bg-img{
-    background-image: url(./postImgs/brainstorming_session__monochromatic.svg);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center;
-} */
-
-/* .bg-color{
-} */
-
 .post-container{
     padding: 4% 10%;
 }
@@ -35,19 +25,16 @@
 }
 
 .post-img-div{
-    border: 1px solid grey;
-    width: 50px;
-    height: 50px;
     text-align: center;
-    border-radius: 10px;
     padding: 3px;
     margin-right: 2rem;
 }
 
 .post-img-div img{
-    max-width:100%;
-    max-height:100%;
-    object-fit: contain;
+    width: 5em;
+    height: 5em;
+    object-fit: fill;
+    border-radius: 50%;
 }
 
 .name-article-div{
