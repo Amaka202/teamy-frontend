@@ -74,7 +74,7 @@ function Post() {
     }
 
     const post = postData.map((val, index) => {
-        return (<div className="post">
+        return (<div className="post" key={index}>
         <div className="pic-name-div">
             <div className="img=flex">
                 <div className="post-img-div">
