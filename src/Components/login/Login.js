@@ -1,8 +1,11 @@
-import React from 'react'
-import { Formik, Form, Field, ErrorMessage } from 'formik'
-import * as Yup from 'yup'
-import './login.css'
-import Header from "../header/Header"
+import React from 'react';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
+import './login.css';
+import TextError from '../texterror/TextError'
+import Header from "../header/Header";
+
+
 function Signup() {
   const initialValues = {
     email: "",
@@ -36,8 +39,8 @@ function Signup() {
             id='email'
             name='email'
           />
+          <ErrorMessage name="email" component={TextError}/>
         </div>
-        <ErrorMessage name="email"/>
 
         <div className='form-control'>
           <label htmlFor='password'>Password</label>
@@ -46,8 +49,9 @@ function Signup() {
             id='password'
             name='password'
           />
+          <ErrorMessage name="password" component={TextError}/>
         </div>
-        <ErrorMessage name="password"/>
+        
         
         <div className="btn-div">
           <button type="submit" className="btn">Submit</button>
