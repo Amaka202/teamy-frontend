@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState} from 'react';
 import Header from '../header/Header';
+import gifIcon from "./postImgs/gifIcon.png";
 import './posts.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEllipsisH } from '@fortawesome/free-solid-svg-icons'
 
 const postData = [
     {
@@ -63,6 +66,12 @@ const postData = [
 ]
 
 function Post() {
+    const [isOpen, setOpen] = useState("false");
+    const element = <FontAwesomeIcon icon={faEllipsisH} />
+    const handleToggle = () => {
+        console.log("called");
+        setOpen(!isOpen);
+    }
 
     const post = postData.map((val, index) => {
         return (<div className="post">
@@ -73,14 +82,23 @@ function Post() {
                 </div>
             </div>
             <div className="name-article-div">
-                <div className="name-div">
-                    <p>{val.firstname.toUpperCase()} {val.lastname.toUpperCase()}
-                    <span>8:30pm</span>
-                    </p>
+                <div>
+                    <div className="name-div">
+                        <p>{val.firstname.toUpperCase()} {val.lastname.toUpperCase()}
+                            <span>8:30pm</span>
+                        </p>
+                    </div>
+                    <div className="article">
+                        <h3>{val.title}</h3>
+                        <p>{val.article}</p>
+                    </div>
                 </div>
-                <div className="article">
-                    <h3>{val.title}</h3>
-                    <p>{val.article}</p>
+                <div className="flexed=div">
+                        <p onClick={handleToggle} id="toggleIcon">{element}</p>
+                        <div id="del-comm-div"  className={isOpen && "hidden"}>
+                            <p>Comment</p>
+                            <p>Delete</p>
+                        </div>
                 </div>
             </div>
         </div>  
@@ -89,6 +107,13 @@ function Post() {
     return (
         <div>
             <Header />
+            <div className="make-post-div">
+                <p id="make-post">Welcome Amaka, any updates?</p>
+                <p>||</p>
+                <p className="gif-div">
+                    <img src={gifIcon} alt="gif icon" />
+                </p>
+            </div>
             <div className="bg-img">
                 <div className="bg-color">
                     <div className="post-container">
