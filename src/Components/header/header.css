@@ -14,8 +14,19 @@
   list-style: none;
   text-decoration: none;
   margin-right: 1rem;
+  font-size: 1.1em;
 }
 
 .logo-container{
   display: flex;
+  color: red;
+  margin-top: -5px;
+}
+
+.logo-container p{
+  padding-top: 0;
+  font-size: 1.5em;
+  background: -webkit-linear-gradient(rgb(253, 253, 253), rgb(240, 240, 84), rgb(211, 43, 43));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

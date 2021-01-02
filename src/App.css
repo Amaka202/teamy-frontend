@@ -2,8 +2,8 @@ body{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font: 100%;
-  background-color:  rgba(34, 34, 34, 0.7);
+  font-size: 100%;
+  background-color: #CEF6FF;
 
 }
 
@@ -36,4 +36,11 @@ body{
 
 .btn-div{
   text-align: center;
+}
+
+
+@media only screen and (max-width: 600px){
+  body{
+    font-size: 75%;
+  }
 }

@@ -2,8 +2,8 @@ import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import './signup.css'
-import Nav from '../header/Nav'
 import TextError from '../texterror/TextError'
+import Header from '../header/Header'
 
 function Signup() {
   const initialValues = {
@@ -34,9 +34,8 @@ function Signup() {
 
   return (
     <div className="signup-container">
-    <div className="header">
-      <Nav />
-    </div>      <div className="signup-form">
+    <Header />      
+    <div className="signup-form">
       <Formik
       initialValues={initialValues}
       validationSchema={validationSchema}

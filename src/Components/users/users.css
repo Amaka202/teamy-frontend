@@ -1,1 +1,54 @@
+#users-heading{
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 2em;
+    font-weight: 700;
+}
 
+.users-container{
+    padding: 0 3%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+}
+
+.users-container .user{
+    padding: 0.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.dp-div{
+    text-align: center;
+    border-radius: 50%;
+    margin-right: 0.8rem;
+}
+
+.dp-div img{
+    width: 6.2em;
+    height: 6.2em;
+    object-fit: cover;
+    border-radius: 50%;
+    padding-bottom: 0;
+}
+
+.biodata .bio-name{
+    font-weight: 700;
+    font-size: 1.5em;
+}
+
+.biodata .span-para{
+    margin: 0.5em 0;
+}
+
+.biodata .span-para span{
+    margin-right: 0.5em;
+}
+
+.biodata .span-para .span-fullstop{
+    font-size: 1em;
+}
