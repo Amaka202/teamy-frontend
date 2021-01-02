@@ -33,7 +33,10 @@ function Signup() {
     >
         <Form>
         <div className='form-control'>
-          <label htmlFor='email'>E-mail</label>
+          <label htmlFor='email'>
+            E-mail
+            <span className="required-star"> *</span>
+          </label>
           <Field
             type='email'
             id='email'
@@ -43,7 +46,10 @@ function Signup() {
         </div>
 
         <div className='form-control'>
-          <label htmlFor='password'>Password</label>
+          <label htmlFor='password'>
+            Password
+            <span className="required-star"> *</span>
+          </label>
           <Field
             type='password'
             id='password'
