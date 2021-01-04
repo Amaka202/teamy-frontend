@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./header.css";
 
 
@@ -8,19 +8,19 @@ export default function Nav() {
         <div className="nav-container">
             <ul>
                 <li>
-                    <Link to='/' style={{ textDecoration: 'none' }}>Home</Link>
+                    <NavLink to='/' style={{ textDecoration: 'none' }}>Home</NavLink>
                 </li>
                 <li>
-                    <Link to='/login' style={{ textDecoration: 'none' }}>Login</Link>
+                    <NavLink to='/login' style={{ textDecoration: 'none' }}>Login</NavLink>
                 </li>
                 <li>
-                    <Link to='/signup' style={{ textDecoration: 'none' }}>Sign Up</Link>
+                    <NavLink to='/signup' style={{ textDecoration: 'none' }}>Sign Up</NavLink>
                 </li>
                 <li>
-                    <Link to='/posts' style={{ textDecoration: 'none' }}>Posts</Link>
+                    <NavLink to='/posts' style={{ textDecoration: 'none' }}>Posts</NavLink>
                 </li>
                 <li>
-                    <Link to='/users' style={{ textDecoration: 'none' }}>Members</Link>
+                    <NavLink to='/users' style={{ textDecoration: 'none' }}>Members</NavLink>
                 </li>
             </ul>
         </div>

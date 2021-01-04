@@ -4,6 +4,7 @@ import * as Yup from 'yup'
 import './signup.css'
 import TextError from '../texterror/TextError'
 import Header from '../header/Header'
+import signupFunc from "./SignupFunc"
 
 function Signup() {
   const initialValues = {
@@ -14,10 +15,12 @@ function Signup() {
     password: "",
     gender: "",
     jobrole:"",
-    department: ""
+    location: ""
   }
+
   const onSubmit = (values, submitProps) => {
     console.log("form value", values)
+    signupFunc(values);
     submitProps.resetForm()
   }
 
@@ -29,7 +32,7 @@ function Signup() {
     password: Yup.string().required('Required').min(6, "Passwword should be at least 6 characters"),
     gender: Yup.string().required('Required'),
     jobrole: Yup.string().required('Required'),
-    department: Yup.string().required('Required'),
+    location: Yup.string().required('Required'),
   })
 
   return (
@@ -144,16 +147,16 @@ function Signup() {
         </div>
 
         <div className='form-control'>
-          <label htmlFor='department'>
-            Department
+          <label htmlFor='location'>
+            Location
             <span className="required-star"> *</span>
           </label>
           <Field
-            type='department'
-            id='department'
-            name='department'
+            type='location'
+            id='location'
+            name='location'
           />
-        <ErrorMessage name="department" component={TextError}/>
+        <ErrorMessage name="location" component={TextError}/>
         </div>
 
         
@@ -167,4 +170,4 @@ function Signup() {
   )
 }
 
-export default Signup
+export default Signup;

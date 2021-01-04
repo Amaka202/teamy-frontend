@@ -74,6 +74,7 @@ function Post() {
     }
 
     const post = postData.map((val, index) => {
+
         return (<div className="post" key={index}>
         <div className="pic-name-div">
             <div className="img=flex">
@@ -125,4 +126,4 @@ function Post() {
     )
 }
 
-export default Post
+export default Post;
