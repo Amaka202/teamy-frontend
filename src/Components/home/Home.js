@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from '../header/Header'
 import homeImg from "./homeImg/home.png"
+import { NavLink } from "react-router-dom";
 import "./home.css"
 
 function Home() {
@@ -18,6 +19,12 @@ function Home() {
                 </div>
                 <div className="home-image">
                     <img src={homeImg} alt="teamy-presentation"/>
+                </div>
+                <div className="signup-user">
+                    <p>
+                        Are you an admin?
+                    <NavLink to='/signup'> Create a user</NavLink>
+                    </p>
                 </div>
             </div>
         </div>

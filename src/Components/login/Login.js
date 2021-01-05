@@ -4,15 +4,54 @@ import * as Yup from 'yup';
 import './login.css';
 import TextError from '../texterror/TextError'
 import Header from "../header/Header";
+import { Route, Redirect } from "react-router-dom";
+
+const api = "https://teamy-api.herokuapp.com/api/v1/login";
+
+async function checkSignIn(arr) {
+  let token;
+    try {
+        const userObj = {
+            email: arr.email,
+            password: arr.password,
+        }
+
+        const response = await (await fetch(api, {
+            method: "POST",
+            mode: "cors",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(userObj)
+        })).json();
+
+        console.log(response);
+        if(response.message === "Login succesfull"){
+            setTimeout(() => {
+                alert('Login successfull')
+            }, 200)
+          window.localStorage.setItem(token, response.token)
+        }else{
+            setTimeout(() => {
+                alert(response.message)
+            }, 200)
+        }
+        return response;
+    } catch (error) {
+        console.log(error);
+    }
+}
 
 
-function Signup() {
+
+function Login() {
   const initialValues = {
     email: "",
     password: ""
   }
   const onSubmit = values => {
     console.log("form values", values)
+    checkSignIn(values)
   }
 
   const validationSchema = Yup.object({
@@ -69,4 +108,4 @@ function Signup() {
   )
 }
 
-export default Signup
+export default Login;

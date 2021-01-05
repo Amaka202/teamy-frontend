@@ -1,4 +1,7 @@
-const api = "http://localhost:5001/api/v1/signup";
+import { Route, Redirect } from "react-router-dom";
+
+const api = "https://teamy-api.herokuapp.com/api/v1/signup";
+
 
 async function signupFunc(arr) {
     try {
@@ -23,6 +26,15 @@ async function signupFunc(arr) {
         })).json();
 
         console.log(response);
+        if(response.message === "user sign up successfull"){
+            setTimeout(() => {
+                alert('user sign up successfull')
+            }, 200)
+        }else{
+            setTimeout(() => {
+                alert(response.message)
+            }, 200)
+        }
         return response;
     } catch (error) {
         console.log(error);

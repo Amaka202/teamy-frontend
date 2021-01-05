@@ -14,9 +14,6 @@ export default function Nav() {
                     <NavLink to='/login' style={{ textDecoration: 'none' }}>Login</NavLink>
                 </li>
                 <li>
-                    <NavLink to='/signup' style={{ textDecoration: 'none' }}>Sign Up</NavLink>
-                </li>
-                <li>
                     <NavLink to='/posts' style={{ textDecoration: 'none' }}>Posts</NavLink>
                 </li>
                 <li>

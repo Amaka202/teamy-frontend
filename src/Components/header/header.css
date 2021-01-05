@@ -30,3 +30,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.logo-container svg>path{
+  fill:rgb(211, 236, 142);
+}
