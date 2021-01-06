@@ -4,12 +4,13 @@ import * as Yup from 'yup';
 import './login.css';
 import TextError from '../texterror/TextError'
 import Header from "../header/Header";
-import { Route, Redirect } from "react-router-dom";
+import { createBrowserHistory } from 'history'
+const history = createBrowserHistory()
+
 
 const api = "https://teamy-api.herokuapp.com/api/v1/login";
 
 async function checkSignIn(arr) {
-  let token;
     try {
         const userObj = {
             email: arr.email,
@@ -30,7 +31,8 @@ async function checkSignIn(arr) {
             setTimeout(() => {
                 alert('Login successfull')
             }, 200)
-          window.localStorage.setItem(token, response.token)
+          window.localStorage.setItem('token', response.token)
+          history.push('/posts')
         }else{
             setTimeout(() => {
                 alert(response.message)
