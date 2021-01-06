@@ -17,6 +17,10 @@
   font-size: 1.1em;
 }
 
+.nav-container img{
+  width: 2rem;
+}
+
 .logo-container{
   display: flex;
   color: red;
