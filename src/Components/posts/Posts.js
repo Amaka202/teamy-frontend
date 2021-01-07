@@ -1,9 +1,14 @@
-import React, { useState} from 'react';
+import React, { Component} from 'react';
 import Header from '../header/Header';
+import { Link } from "react-router-dom";
+import {checkToken} from "../checkToken"
+import CommentPost from './CommentPost';
+import EditPost from './EditPost';
+import DeletePost from './DeletePost';
 import gifIcon from "./postImgs/gifIcon.png";
 import './posts.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEllipsisH } from '@fortawesome/free-solid-svg-icons'
+
+const api = 'https://teamy-api.herokuapp.com/api/v1/posts';
 
 const postData = [
     {
@@ -65,13 +70,34 @@ const postData = [
     
 ]
 
-function Post() {
-    const [isOpen, setOpen] = useState("false");
-    const element = <FontAwesomeIcon icon={faEllipsisH} />
-    const handleToggle = () => {
-        console.log("called");
-        setOpen(!isOpen);
+class Posts extends Component {
+    constructor(props){
+        super(props)
+        this.state ={
+            posts: [],
+            loaded: ''
+        }
     }
+
+    componentDidMount(){
+        fetch(api, {
+            method: "GET",
+            headers: {
+                "content-type" : "application/json",
+                Authorization: `Bearer ${checkToken()}`
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                this.setState({
+                    posts: data.data
+                })
+            })
+            .catch(err => err);
+    }
+    
+    render() {
 
     const post = postData.map((val, index) => {
 
@@ -94,12 +120,10 @@ function Post() {
                         <p>{val.article}</p>
                     </div>
                 </div>
-                <div className="flexed=div">
-                        <p onClick={handleToggle} id="toggleIcon">{element}</p>
-                        <div id="del-comm-div"  className={isOpen && "hidden"}>
-                            <p>Comment</p>
-                            <p>Delete</p>
-                        </div>
+                <div className="del-comm-div">
+                    <CommentPost />
+                    <EditPost />
+                    <DeletePost />                          
                 </div>
             </div>
         </div>  
@@ -109,8 +133,11 @@ function Post() {
         <div>
             <Header />
             <div className="make-post-div">
-                <p id="make-post">Welcome Amaka, any updates?</p>
-                <p>||</p>
+                <p id="make-post">
+                    <Link to='/write-post' style={{ textDecoration: 'none' }}>
+                     Welcome Amaka, any updates?
+                    </Link>
+                </p>
                 <p className="gif-div">
                     <img src={gifIcon} alt="gif icon" />
                 </p>
@@ -124,6 +151,7 @@ function Post() {
             </div>
         </div>
     )
+  }
 }
 
-export default Post;
+export default Posts;

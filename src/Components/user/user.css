@@ -1,0 +1,54 @@
+.user-container{
+    /* margin: auto; */
+    text-align: center;
+}
+
+.userDp-div{
+    margin-bottom: 2em;
+}
+.userDp-div img{
+    width: 15em;
+    border-radius: 50%;
+}
+
+.userDp-div p{
+    font-size: 0.8em;
+}
+
+.userDp-div input{
+    font-size: 0.8em;
+}
+
+.userDp-div button{
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1em;
+    background-color: thistle;
+    color: black;
+    margin-top: 0.9em;
+}
+
+.userName-div{
+    font-weight: 800;
+    font-size: 1.2em;
+    margin-bottom: 0.9em;
+}
+
+
+.email-div{
+    margin-bottom: 0.9em;
+}
+
+.job-div{
+    margin-bottom: 0.9em;
+}
+
+.job-div span{
+    margin-right: 0.5em;
+}
+
+.location-div{
+    font-size: 1.2em;
+}

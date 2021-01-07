@@ -19,6 +19,11 @@ export default function Nav() {
                 <li>
                     <NavLink to='/users' style={{ textDecoration: 'none' }}>Members</NavLink>
                 </li>
+                <li>
+                    <NavLink to='/user' style={{ textDecoration: 'none' }}>
+                        <img src={`https://res.cloudinary.com/amaka01/image/upload/v1609578087/cg3mtemxniugidu73ewn.jpg`} id="member-icon" alt="dp"/>
+                    </NavLink>
+                </li>
             </ul>
         </div>
     )

@@ -60,9 +60,6 @@
 }
 
 .name-article-div{
-    display: flex;
-    justify-content: space-between;
-    align-content: space-between;
     width: 70%;
 }
 
@@ -78,20 +75,12 @@
     font-weight: 100;
 }
 
-#del-comm-div{
-    /* display: none; */
-    padding: 1em;
-    background-color:#d4f2fa;
+.del-comm-div{
+    display: flex;
+    margin-top: 1em;
 }
 
-#del-comm-div p:first-child{
-    margin-bottom: 1em;
-}
-
-#toggleIcon{
+.del-comm-div p{
     cursor: pointer;
-}
-
-.hidden{
-    display: none;
+    margin-right: 3em;
 }
