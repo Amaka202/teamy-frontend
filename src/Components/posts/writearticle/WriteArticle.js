@@ -2,9 +2,11 @@ import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import './writearticle.css'
-import TextError from "../texterror/TextError";
-import sendIcon from "./Img/transparentSendIcon.jpg";
-import gifIcon from "./Img/gifIcon.png";
+import {checkToken} from "../../checkToken"
+import TextError from "../../texterror/TextError";
+
+const api = 'https://teamy-api.herokuapp.com/api/v1/posts';
+
 
 function WriteArticle() {
   const initialValues = {
@@ -12,7 +14,18 @@ function WriteArticle() {
     article: ""
   }
   const onSubmit = values => {
-    console.log("form values", values)
+    fetch (api, {
+      method: "POST",
+      mode: "cors",
+      headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${checkToken()}`
+      },
+      body: JSON.stringify(values)
+    })
+    .then(data => data.json())
+    .then(response => console.log(response))
+    .catch(err => console.log(err));
   }
 
   const validationSchema = Yup.object({
@@ -57,13 +70,10 @@ function WriteArticle() {
         </div>
         
         <div className="btn-gif-div">
-          <div>
-            <button type="submit" className="send-btn">
-              <img src={sendIcon} alt="send icon" />
+          <div className="btn-div">
+            <button type="submit" className="btn" >
+              Post
             </button>
-          </div>
-          <div className="gif-div">
-            <img src={gifIcon} alt="gifIcon"/>
           </div>
         </div>
     </Form>
