@@ -1,7 +1,7 @@
 import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
-import './writearticle.css'
+import '../postStyleFiles/writearticle.css'
 import {checkToken} from "../../checkToken"
 import TextError from "../../texterror/TextError";
 

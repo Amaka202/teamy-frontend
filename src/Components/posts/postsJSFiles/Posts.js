@@ -1,12 +1,12 @@
 import React, { Component} from 'react';
-import Header from '../header/Header';
+import Header from '../../header/Header';
 import { Link } from "react-router-dom";
-import {checkToken} from "../checkToken"
+import {checkToken} from "../../checkToken"
 import CommentPost from './CommentPost';
 import EditPost from './EditPost';
 import DeletePost from './DeletePost';
-import gifIcon from "./postImgs/gifIcon.png";
-import './posts.css';
+import '../postStyleFiles/posts.css';
+import gifIcon from '../postImgs/gifIcon.png'
 
 const api = 'https://teamy-api.herokuapp.com/api/v1/posts';
 

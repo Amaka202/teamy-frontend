@@ -1,4 +1,4 @@
-import { Route, Redirect } from "react-router-dom";
+// import { Route, Redirect } from "react-router-dom";
 
 const api = "https://teamy-api.herokuapp.com/api/v1/signup";
 

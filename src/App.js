@@ -7,12 +7,12 @@ import Login from './Components/login/Login';
 import Signup from './Components/signup/Signup';
 import User from './Components/user/User'
 import Users from './Components/users/Users'
-import Posts from './Components/posts/Posts'
+import Posts from './Components/posts/postsJSFiles/Posts'
 import Home from './Components/home/Home';
 import NotFound from './Components/NotFound';
-import WriteArticle from './Components/posts/writearticle/WriteArticle';
+import WriteArticle from './Components/posts/postsJSFiles/WriteArticle';
 // import CommentPost from './Components/posts/CommentPost';
-import Post from './Components/posts/Post';
+import Post from './Components/posts/postsJSFiles/Post';
 
 function App() {
   return (
