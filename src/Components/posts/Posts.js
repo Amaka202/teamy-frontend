@@ -10,66 +10,6 @@ import './posts.css';
 
 const api = 'https://teamy-api.herokuapp.com/api/v1/posts';
 
-const postData = [
-    {
-        profile_img: "https://robohash.org/1",
-        firstname: "amaka",
-        lastname:"umeh",
-        title: "update",
-        article:"amazingHey you are"
-    },
-    {
-        profile_img: "https://robohash.org/2",
-        firstname: "amaka",
-        lastname:"umeh",
-        title: "update",
-        article:"amazingHey you are"
-    },
-    {
-        profile_img: "https://robohash.org/3",
-        firstname: "amaka",
-        lastname:"umeh",
-        title: "update",
-        article:"amazingHey you are"
-    },
-    {
-        profile_img: "https://robohash.org/3",
-        firstname: "amaka",
-        lastname:"umeh",
-        title: "update",
-        article:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas"
-    },
-    {
-        profile_img: "https://robohash.org/4",
-        firstname: "amaka",
-        lastname:"umeh",
-        title: "update",
-        article:"amazingHey you are"
-    },
-    {
-        profile_img: "https://robohash.org/5",
-        firstname: "amaka",
-        lastname:"umeh",
-        title: "update",
-        article:"amazingHey you are"
-    },
-    {
-        profile_img: "https://robohash.org/6",
-        firstname: "amaka",
-        lastname:"umeh",
-        title: "update",
-        article:"amazingHey you are"
-    },
-    {
-        profile_img: "https://robohash.org/7",
-        firstname: "amaka",
-        lastname:"umeh",
-        title: "update",
-        article:"amazingHey you are"
-    }
-    
-]
-
 class Posts extends Component {
     constructor(props){
         super(props)
@@ -98,8 +38,7 @@ class Posts extends Component {
     }
     
     render() {
-
-    const post = postData.map((val, index) => {
+    const post = this.state.posts.map((val, index) => {
 
         return (<div className="post" key={index}>
         <div className="pic-name-div">
@@ -116,8 +55,10 @@ class Posts extends Component {
                         </p>
                     </div>
                     <div className="article">
-                        <h3>{val.title}</h3>
-                        <p>{val.article}</p>
+                        <Link to={`/posts/:${val.id}`} style={{ textDecoration: 'none' }}>
+                            <h3>{val.title}</h3>
+                            <p>{val.article}</p>
+                        </Link>
                     </div>
                 </div>
                 <div className="del-comm-div">
