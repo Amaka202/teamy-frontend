@@ -7,6 +7,8 @@ import EditPost from './EditPost';
 import DeletePost from './DeletePost';
 import '../postStyleFiles/posts.css';
 import gifIcon from '../postImgs/gifIcon.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faComment } from '@fortawesome/free-solid-svg-icons'
 
 const api = 'https://teamy-api.herokuapp.com/api/v1/posts';
 
@@ -38,6 +40,7 @@ class Posts extends Component {
     }
     
     render() {
+    const element = <FontAwesomeIcon icon={faComment} />   
     const post = this.state.posts.map((val, index) => {
 
         return (<div className="post" key={index}>
@@ -55,14 +58,16 @@ class Posts extends Component {
                         </p>
                     </div>
                     <div className="article">
-                        <Link to={`/posts/:${val.id}`} style={{ textDecoration: 'none' }}>
+                        <Link to={`/posts/${val.id}`} style={{ textDecoration: 'none' }}>
                             <h3>{val.title}</h3>
                             <p>{val.article}</p>
                         </Link>
                     </div>
                 </div>
                 <div className="del-comm-div">
-                    <CommentPost />
+                    <Link to={`/posts/${val.id}`} style={{ textDecoration: 'none' }}>
+                        <p>{element}</p>
+                    </Link>
                     <EditPost />
                     <DeletePost />                          
                 </div>

@@ -21,6 +21,10 @@
   width: 2rem;
 }
 
+.nav-container .active{
+  font-weight: bold;
+}
+
 .logo-container{
   display: flex;
   color: red;
@@ -38,3 +42,4 @@
 .logo-container svg>path{
   fill:rgb(211, 236, 142);
 }
+
