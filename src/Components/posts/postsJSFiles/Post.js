@@ -27,7 +27,7 @@ class Post extends Component {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data.data);
+                // console.log(data.data);
                 let post = data.data.filter(val => val.id === postId)
                 this.setState({
                     post: post[0]
