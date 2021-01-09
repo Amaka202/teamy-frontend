@@ -2,7 +2,6 @@ import React, { Component} from 'react';
 import Header from '../../header/Header';
 import { Link } from "react-router-dom";
 import {checkToken} from "../../checkToken"
-import CommentPost from './CommentPost';
 import EditPost from './EditPost';
 import DeletePost from './DeletePost';
 import '../postStyleFiles/posts.css';

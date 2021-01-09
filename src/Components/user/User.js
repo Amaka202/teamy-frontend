@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from "react-router-dom";
 import {checkToken} from "../checkToken";
 import Header from "../header/Header";
 import UploadDp from './UploadDp';

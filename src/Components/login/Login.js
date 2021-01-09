@@ -6,7 +6,6 @@ import TextError from '../texterror/TextError'
 import Header from "../header/Header";
 // import { createBrowserHistory } from 'history'
 // const history = createBrowserHistory()
-import {useHistory} from 'react-router-dom'
 
 
 const api = "https://teamy-api.herokuapp.com/api/v1/login";
