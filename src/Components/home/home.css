@@ -4,6 +4,7 @@
     justify-content: space-around;
     align-content: space-around;
     flex-wrap: wrap;
+    color: black;
 }
 
 .home-text{
@@ -14,12 +15,13 @@
     font-size: 3em;
     line-height: 50px;
     margin-bottom: 1rem;
+    color: rgb(34, 30, 30);
 }
 
 .home-text p{
     font-size: 1.5em;
     line-height: 50px;
-    color: #babdc5;
+    color: rgb(34, 30, 30);
 }
 
 .home-image{

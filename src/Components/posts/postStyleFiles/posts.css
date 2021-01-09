@@ -13,9 +13,11 @@
     margin: auto;
     text-align: center;
     display: flex;
+    font-size: 0.9em;
+    color: black;
     justify-content: space-around;
     align-content: space-around;
-    background-color: #d4f2fa;
+    background-color: #fbfeff;
 }
 
 #make-post{
@@ -53,8 +55,8 @@
 }
 
 .post-img-div img{
-    width: 5em;
-    height: 5em;
+    width: 4em;
+    height: 4em;
     object-fit: fill;
     border-radius: 50%;
 }
@@ -64,8 +66,8 @@
 }
 
 .name-div{
-    font-size: 1.2em;
-    font-weight: 700;
+    font-size: 0.9em;
+    font-weight: 600;
     margin-bottom: 1rem;
 }
 
@@ -73,6 +75,14 @@
     margin-left: 1rem;
     font-size: 0.7em;
     font-weight: 100;
+}
+
+.article h3{
+    font-size: 0.9em;
+}
+
+.article p{
+    font-size: 0.8em;
 }
 
 .del-comm-div{

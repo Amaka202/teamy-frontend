@@ -8,7 +8,8 @@ class CommentPost extends Component {
     constructor(props){
         super(props)
         this.state = {
-            comment: ""
+            comment: "",
+            showComment: ""
         }
     }
 
@@ -37,58 +38,19 @@ class CommentPost extends Component {
             body: JSON.stringify(commentObj)
         })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => {
+                this.setState({
+                    showComment: data
+                })
+            })
             .catch(err => console.log(err));
     }
     render() {
+        console.log(this.state.showComment);
         return (
             <div className="comment-container">
                 <p>Comments</p>
-                <div className="view-comment-div">
-                    <div className="comm-img-div">
-                        <img src={`https://res.cloudinary.com/amaka01/image/upload/v1609578087/cg3mtemxniugidu73ewn.jpg`} alt="dp"/>
-                    </div>
-                    <div>
-                        <p>Umeh Nnenna</p>
-                        <p>This is awesome Amaka</p>
-                    </div>
-                </div>
-                <div className="view-comment-div">
-                    <div className="comm-img-div">
-                        <img src={`https://res.cloudinary.com/amaka01/image/upload/v1609578087/cg3mtemxniugidu73ewn.jpg`} alt="dp"/>
-                    </div>
-                    <div>
-                        <p>Umeh Nnenna</p>
-                        <p>This is awesome Amaka</p>
-                    </div>
-                </div>
-                <div className="view-comment-div">
-                    <div className="comm-img-div">
-                        <img src={`https://res.cloudinary.com/amaka01/image/upload/v1609578087/cg3mtemxniugidu73ewn.jpg`} alt="dp"/>
-                    </div>
-                    <div>
-                        <p>Umeh Nnenna</p>
-                        <p>This is awesome Amaka</p>
-                    </div>
-                </div>
-                <div className="view-comment-div">
-                    <div className="comm-img-div">
-                        <img src={`https://res.cloudinary.com/amaka01/image/upload/v1609578087/cg3mtemxniugidu73ewn.jpg`} alt="dp"/>
-                    </div>
-                    <div>
-                        <p>Umeh Nnenna</p>
-                        <p>This is awesome Amaka heyhju jshjs jcsjcjs jsjcjsjcs kjsjcjsjc kjsjcjsjcj jsjjcjsjc jsjcjsjc jsjcjscs jsjcscjs jsjcjsjcj jsjcjsjcs jcsjcjsc jsjcscs jjvifie</p>
-                    </div>
-                </div>
-                <div className="view-comment-div">
-                    <div className="comm-img-div">
-                        <img src={`https://res.cloudinary.com/amaka01/image/upload/v1609578087/cg3mtemxniugidu73ewn.jpg`} alt="dp"/>
-                    </div>
-                    <div>
-                        <p>Umeh Nnenna</p>
-                        <p>This is awesome Amaka</p>
-                    </div>
-                </div>
+                {/* {comment} */}
                 <div className="post-comment-div">
                     <form>
                         <label>Post a Comment
