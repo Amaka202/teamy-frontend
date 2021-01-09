@@ -4,13 +4,15 @@ import * as Yup from 'yup';
 import './login.css';
 import TextError from '../texterror/TextError'
 import Header from "../header/Header";
-import { createBrowserHistory } from 'history'
-const history = createBrowserHistory()
+// import { createBrowserHistory } from 'history'
+// const history = createBrowserHistory()
+import {useHistory} from 'react-router-dom'
 
 
 const api = "https://teamy-api.herokuapp.com/api/v1/login";
 
-async function checkSignIn(arr) {
+async function checkSignIn(arr, props) {
+  // const  history = useHistory();
     try {
         const userObj = {
             email: arr.email,
@@ -32,7 +34,7 @@ async function checkSignIn(arr) {
                 alert('Login successfull')
             }, 200)
           window.localStorage.setItem('token', response.token)
-          history.push('/posts')
+          props.history.push('/posts')
         }else{
             setTimeout(() => {
                 alert(response.message)
@@ -46,14 +48,14 @@ async function checkSignIn(arr) {
 
 
 
-function Login() {
+function Login(props) {
   const initialValues = {
     email: "",
     password: ""
   }
   const onSubmit = values => {
     console.log("form values", values)
-    checkSignIn(values)
+    checkSignIn(values, props)
   }
 
   const validationSchema = Yup.object({

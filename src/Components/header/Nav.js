@@ -8,19 +8,19 @@ export default function Nav() {
         <div className="nav-container">
             <ul>
                 <li>
-                    <NavLink to='/' style={{ textDecoration: 'none' }}>Home</NavLink>
+                    <NavLink to='/' style={{ textDecoration: 'none' }} activeClassName="active">Home</NavLink>
                 </li>
                 <li>
-                    <NavLink to='/login' style={{ textDecoration: 'none' }}>Login</NavLink>
+                    <NavLink to='/login' style={{ textDecoration: 'none' }} activeClassName="active">Login</NavLink>
                 </li>
                 <li>
-                    <NavLink to='/posts' style={{ textDecoration: 'none' }}>Posts</NavLink>
+                    <NavLink to='/posts' style={{ textDecoration: 'none' }} activeClassName="active">Posts</NavLink>
                 </li>
                 <li>
-                    <NavLink to='/users' style={{ textDecoration: 'none' }}>Members</NavLink>
+                    <NavLink to='/users' style={{ textDecoration: 'none' }} activeClassName="active">Members</NavLink>
                 </li>
                 <li>
-                    <NavLink to='/user' style={{ textDecoration: 'none' }}>
+                    <NavLink to='/user' style={{ textDecoration: 'none' }} activeClassName="active">
                         <img src={`https://res.cloudinary.com/amaka01/image/upload/v1609578087/cg3mtemxniugidu73ewn.jpg`} id="member-icon" alt="dp"/>
                     </NavLink>
                 </li>

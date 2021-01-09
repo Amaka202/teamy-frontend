@@ -1,74 +1,16 @@
 import React, { Component} from 'react';
-import Header from '../header/Header';
+import Header from '../../header/Header';
 import { Link } from "react-router-dom";
-import {checkToken} from "../checkToken"
+import {checkToken} from "../../checkToken"
 import CommentPost from './CommentPost';
 import EditPost from './EditPost';
 import DeletePost from './DeletePost';
-import gifIcon from "./postImgs/gifIcon.png";
-import './posts.css';
+import '../postStyleFiles/posts.css';
+import gifIcon from '../postImgs/gifIcon.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faComment } from '@fortawesome/free-solid-svg-icons'
 
 const api = 'https://teamy-api.herokuapp.com/api/v1/posts';
-
-const postData = [
-    {
-        profile_img: "https://robohash.org/1",
-        firstname: "amaka",
-        lastname:"umeh",
-        title: "update",
-        article:"amazingHey you are"
-    },
-    {
-        profile_img: "https://robohash.org/2",
-        firstname: "amaka",
-        lastname:"umeh",
-        title: "update",
-        article:"amazingHey you are"
-    },
-    {
-        profile_img: "https://robohash.org/3",
-        firstname: "amaka",
-        lastname:"umeh",
-        title: "update",
-        article:"amazingHey you are"
-    },
-    {
-        profile_img: "https://robohash.org/3",
-        firstname: "amaka",
-        lastname:"umeh",
-        title: "update",
-        article:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas"
-    },
-    {
-        profile_img: "https://robohash.org/4",
-        firstname: "amaka",
-        lastname:"umeh",
-        title: "update",
-        article:"amazingHey you are"
-    },
-    {
-        profile_img: "https://robohash.org/5",
-        firstname: "amaka",
-        lastname:"umeh",
-        title: "update",
-        article:"amazingHey you are"
-    },
-    {
-        profile_img: "https://robohash.org/6",
-        firstname: "amaka",
-        lastname:"umeh",
-        title: "update",
-        article:"amazingHey you are"
-    },
-    {
-        profile_img: "https://robohash.org/7",
-        firstname: "amaka",
-        lastname:"umeh",
-        title: "update",
-        article:"amazingHey you are"
-    }
-    
-]
 
 class Posts extends Component {
     constructor(props){
@@ -98,8 +40,8 @@ class Posts extends Component {
     }
     
     render() {
-
-    const post = postData.map((val, index) => {
+    const element = <FontAwesomeIcon icon={faComment} />   
+    const post = this.state.posts.map((val, index) => {
 
         return (<div className="post" key={index}>
         <div className="pic-name-div">
@@ -116,12 +58,16 @@ class Posts extends Component {
                         </p>
                     </div>
                     <div className="article">
-                        <h3>{val.title}</h3>
-                        <p>{val.article}</p>
+                        <Link to={`/posts/${val.id}`} style={{ textDecoration: 'none' }}>
+                            <h3>{val.title}</h3>
+                            <p>{val.article}</p>
+                        </Link>
                     </div>
                 </div>
                 <div className="del-comm-div">
-                    <CommentPost />
+                    <Link to={`/posts/${val.id}`} style={{ textDecoration: 'none' }}>
+                        <p>{element}</p>
+                    </Link>
                     <EditPost />
                     <DeletePost />                          
                 </div>

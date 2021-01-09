@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import './signup.css'
@@ -6,7 +6,7 @@ import TextError from '../texterror/TextError'
 import Header from '../header/Header'
 import signupFunc from "./SignupFunc"
 
-function Signup() {
+function Signup(props) {
   const initialValues = {
     firstname: "",
     lastname:"",
@@ -18,9 +18,13 @@ function Signup() {
     location: ""
   }
 
+  useEffect(()=>{
+    console.log(props.history)
+  })
   const onSubmit = (values, submitProps) => {
+    
     console.log("form value", values)
-    signupFunc(values);
+    signupFunc(values, props);
     submitProps.resetForm()
   }
 

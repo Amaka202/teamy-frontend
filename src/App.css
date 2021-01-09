@@ -3,12 +3,14 @@ body{
   padding: 0;
   box-sizing: border-box;
   font-size: 100%;
-  background-color: #CEF6FF;
+  background-color: #FBFBFB;
+  color: red;
 
 }
 
 /* .App {
   text-align: center;
+  #CFC7CB
 } */
 
 .form-control{

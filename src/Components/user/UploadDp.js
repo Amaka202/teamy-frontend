@@ -18,14 +18,16 @@ export default class UploadDp extends Component {
 
     uploadFile = () => {
         const data = new FormData();
-        data.append('myFile', this.state.file)
-        console.log(data.get('myFile'));
+        data.append('File', this.state.file)
+        console.log(data.get('File'));
         fetch(api, {
             method: "POST",
             headers: {
-                'content-type': 'multipart/form-data'            },
+                'Accept': 'application/json',
+                'Content-Type': 'multipart/form-data'
+               },
             body: data
-        })
+            })
         .then(res => res.json())
         .then(data => console.log(data))
     }
