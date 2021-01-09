@@ -2,7 +2,7 @@
 import React from 'react';
 // import ReactDOM from 'react-dom';
 import './App.css';
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch,Redirect } from "react-router-dom";
 import Login from './Components/login/Login';
 import Signup from './Components/signup/Signup';
 import User from './Components/user/User'
@@ -18,6 +18,7 @@ function App() {
   return (
     <div className="App">
         <Switch>
+          <Redirect from='/teamy-frontend' to="/" />
           <Route path='/' exact component={Home} />
           <Route path='/login' exact component={Login} />
           <Route path='/posts' exact component={Posts} />
