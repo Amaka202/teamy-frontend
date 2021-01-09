@@ -15,6 +15,12 @@
   text-decoration: none;
   margin-right: 1rem;
   font-size: 1.1em;
+  color: rgb(34, 30, 30);
+
+}
+
+.link-class{
+  color: rgb(112, 79, 79);
 }
 
 .nav-container img{
@@ -23,7 +29,8 @@
 }
 
 .nav-container .active{
-  font-weight: bold;
+  border-bottom: 4px solid #D3EC8E;
+  /* font-weight: bold; */
 }
 
 .logo-container{

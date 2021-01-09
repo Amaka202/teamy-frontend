@@ -37,7 +37,10 @@ export default class UploadDp extends Component {
         return (
             <div>
                 <input name="file" type="file" onChange={this.handleChange}/> <br/>
-                <button type="submit" onClick={this.uploadFile}>Upload</button>                  
+                    <div className="btn-div">
+                <button type="submit" onClick={this.uploadFile} className="btn">Upload</button>                  
+
+                </div>
             </div>
         )
     }

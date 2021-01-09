@@ -64,7 +64,7 @@ class Posts extends Component {
                     </div>
                 </div>
                 <div className="del-comm-div">
-                    <Link to={`/posts/${val.id}`} style={{ textDecoration: 'none' }}>
+                    <Link to={`/posts/${val.id}`} style={{ textDecoration: 'none' }} >
                         <p>{element}</p>
                     </Link>
                     <EditPost />
@@ -79,8 +79,8 @@ class Posts extends Component {
             <Header />
             <div className="make-post-div">
                 <p id="make-post">
-                    <Link to='/write-post' style={{ textDecoration: 'none' }}>
-                     Welcome Amaka, any updates?
+                    <Link to='/write-post' style={{ textDecoration: 'none' }} className="link-class">
+                        Welcome Amaka, any updates?
                     </Link>
                 </p>
                 <p className="gif-div">
