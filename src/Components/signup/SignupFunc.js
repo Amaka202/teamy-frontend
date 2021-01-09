@@ -3,7 +3,7 @@
 const api = "https://teamy-api.herokuapp.com/api/v1/signup";
 
 
-async function signupFunc(arr) {
+async function signupFunc(arr, props ) {
     try {
         const userObj = {
             firstname: arr.firstname,
@@ -26,10 +26,12 @@ async function signupFunc(arr) {
         })).json();
 
         console.log(response);
-        if(response.message === "user sign up successfull"){
+        if(response.message === "user sign up successful"){
             setTimeout(() => {
                 alert('user sign up successfull')
             }, 200)
+            console.log(props);
+            props.history.push('/posts')
         }else{
             setTimeout(() => {
                 alert(response.message)

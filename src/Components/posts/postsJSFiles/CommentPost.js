@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import '../postStyleFiles/commentpost.css'
 import { withRouter } from 'react-router-dom'
+import {checkToken} from '../../checkToken'
 
 
 class CommentPost extends Component {
@@ -17,22 +18,27 @@ class CommentPost extends Component {
         })
     }
 
+    
+
     handleSubmit = (e) => {
         e.preventDefault();
         let postId = this.props.match.params.id;
-        const api = `http://localhost:5001/${postId}/comment`;
+        const api = `https://teamy-api.herokuapp.com/api/v1/posts/${postId}/comment`;
+        const commentObj = {
+            comment: this.state.comment
+        }
         fetch(api, {
             method: "POST",
+            mode: "cors",
             headers: {
                 "content-type" : "application/json",
+                Authorization: `Bearer ${checkToken()}`
             },
-            body: {
-                comment: this.state.comment
-            }
+            body: JSON.stringify(commentObj)
         })
             .then(res => res.json())
             .then(data => console.log(data))
-            .catch(err => err);
+            .catch(err => console.log(err));
     }
     render() {
         return (
