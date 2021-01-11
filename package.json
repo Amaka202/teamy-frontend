@@ -1,6 +1,5 @@
 {
   "name": "teamy-frontend",
-  "homepage": "https://amaka202.github.io/teamy-frontend/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
