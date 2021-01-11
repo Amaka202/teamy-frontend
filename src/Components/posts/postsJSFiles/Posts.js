@@ -1,4 +1,5 @@
 import React, { Component} from 'react';
+import dayjs from 'dayjs';
 import Header from '../../header/Header';
 import { Link } from "react-router-dom";
 import {checkToken} from "../../checkToken"
@@ -8,6 +9,8 @@ import '../postStyleFiles/posts.css';
 import gifIcon from '../postImgs/gifIcon.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faComment } from '@fortawesome/free-solid-svg-icons'
+var relativeTime = require('dayjs/plugin/relativeTime')
+dayjs.extend(relativeTime)
 
 const api = 'https://teamy-api.herokuapp.com/api/v1/posts';
 
@@ -46,14 +49,14 @@ class Posts extends Component {
         <div className="pic-name-div">
             <div className="img=flex">
                 <div className="post-img-div">
-                    <img src={`https://res.cloudinary.com/amaka01/image/upload/v1609578087/cg3mtemxniugidu73ewn.jpg`} alt="dp"/>
+                    <img src={val.profile_img ? val.profile_img : `https://res.cloudinary.com/amaka01/image/upload/v1609578087/cg3mtemxniugidu73ewn.jpg`} alt="dp"/>
                 </div>
             </div>
             <div className="name-article-div">
                 <div>
                     <div className="name-div">
                         <p>{val.firstname.toUpperCase()} {val.lastname.toUpperCase()}
-                            <span>8:30pm</span>
+                            <span>{dayjs(val.createdat).fromNow()}</span>
                         </p>
                     </div>
                     <div className="article">

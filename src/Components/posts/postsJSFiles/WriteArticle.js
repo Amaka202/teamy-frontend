@@ -8,7 +8,7 @@ import TextError from "../../texterror/TextError";
 const api = 'https://teamy-api.herokuapp.com/api/v1/posts';
 
 
-function WriteArticle() {
+function WriteArticle(props) {
   const initialValues = {
     title: "",
     article: ""
@@ -24,7 +24,10 @@ function WriteArticle() {
       body: JSON.stringify(values)
     })
     .then(data => data.json())
-    .then(response => console.log(response))
+    .then(response => {
+      console.log(response);
+      props.history.push('/posts')
+    })
     .catch(err => console.log(err));
   }
 
