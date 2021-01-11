@@ -10,6 +10,7 @@ import Users from './Components/users/Users'
 import Posts from './Components/posts/postsJSFiles/Posts'
 import Home from './Components/home/Home';
 import NotFound from './Components/NotFound';
+import { ProtectedRoute } from './Components/ProtectedRoute'
 import WriteArticle from './Components/posts/postsJSFiles/WriteArticle';
 // import CommentPost from './Components/posts/CommentPost';
 import Post from './Components/posts/postsJSFiles/Post';
@@ -23,12 +24,12 @@ function App() {
           <Route path='/' exact component={Home} />
           <Route path='/login' exact component={Login} />
           <Route path='/logout' exact component={LogOut} />
-          <Route path='/posts' exact component={Posts} />
+          <ProtectedRoute path='/posts' exact component={Posts} />
           <Route path='/signup' exact component={Signup} />
-          <Route path='/users' exact component={Users} />
-          <Route path='/user' exact component={User} />
-          <Route path='/write-post' exact component={WriteArticle} />
-          <Route path="/posts/:id" component={Post} />
+          <ProtectedRoute path='/users' exact component={Users} />
+          <ProtectedRoute path='/user' exact component={User} />
+          <ProtectedRoute path='/write-post' exact component={WriteArticle} />
+          <ProtectedRoute path="/posts/:id" component={Post} />
           <Route component={NotFound}/>
         </Switch>
     </div>
