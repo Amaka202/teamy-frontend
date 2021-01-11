@@ -1,7 +1,7 @@
 import React from 'react'
 import {checkToken} from "../checkToken";
-import Header from "../header/Header";
-import UploadDp from './UploadDp';
+import Header2 from "../header/Header2";
+// import UploadDp from './UploadDp';
 import './user.css'
 const api = 'https://teamy-api.herokuapp.com/api/v1/user';
 
@@ -42,7 +42,7 @@ export default class User extends React.Component {
         const {email, firstname, lastname, gender, profile_img, jobrole, location} = this.state.user;
         return (
             <div>
-                <Header />
+                <Header2 />
                 <div className="user-container">
                      <div className="userDp-div">
                         <img src={profile_img ? profile_img : `https://res.cloudinary.com/amaka01/image/upload/v1609578087/cg3mtemxniugidu73ewn.jpg`} alt="dp"/>
