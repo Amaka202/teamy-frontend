@@ -25,7 +25,6 @@ function WriteArticle(props) {
     })
     .then(data => data.json())
     .then(response => {
-      console.log(response);
       props.history.push('/posts')
     })
     .catch(err => console.log(err));

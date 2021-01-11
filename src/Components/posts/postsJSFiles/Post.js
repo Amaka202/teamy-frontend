@@ -11,7 +11,8 @@ class Post extends Component {
     constructor(props){
         super(props)
         this.state = {
-            post: ""
+            post: "",
+            loading:true
         }
     }
 
@@ -30,7 +31,8 @@ class Post extends Component {
                 // console.log(data.data);
                 let post = data.data.filter(val => val.id === postId)
                 this.setState({
-                    post: post[0]
+                    post: post[0],
+                    loading:false
                 })
             })
             .catch(err => err);
@@ -38,7 +40,10 @@ class Post extends Component {
 
     render() {
         const individualPost = this.state.post;
-        const { firstname, title, article, profile_img } = individualPost
+        const { firstname, title, article, profile_img } = individualPost;
+        if(this.state.loading){
+            return <p className="loader"></p>
+        }
         return (
             <div>
                 <div className="postid-container">

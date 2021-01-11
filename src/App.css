@@ -43,6 +43,29 @@ div, h1, h2, h3, h4, h5, h6, p, li, span, Link, label{
   text-align: center;
 }
 
+.title-div{
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.loader {
+  margin: auto;
+  margin-top: 5em;
+  border: 1em solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 7em;
+  height: 7em;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 
 @media only screen and (max-width: 600px){
   body{

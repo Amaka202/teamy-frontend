@@ -9,7 +9,8 @@ export default class User extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            user: []
+            user: [],
+            loading: true
         }
     }
 
@@ -25,7 +26,8 @@ export default class User extends React.Component {
             .then(data => {
                 console.log(data.data[0]);
                 this.setState({
-                    user: data.data[0]
+                    user: data.data[0],
+                    loading: false
                 })
             })
             .catch(err => err);  
@@ -34,6 +36,9 @@ export default class User extends React.Component {
 
     render() {
         console.log(this.state.user.email);
+        if(this.state.loading){
+            return <p className="loader"></p>
+        }
         const {email, firstname, lastname, gender, profile_img, jobrole, location} = this.state.user;
         return (
             <div>
@@ -44,7 +49,7 @@ export default class User extends React.Component {
                         {!profile_img && 
                         <p>
                              <p>Upload a profile Image</p> <br />
-                             <UploadDp />
+                             {/* <UploadDp /> */}
                            </p>}
                      </div>
                      <div className="userName-div">

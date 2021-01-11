@@ -13,14 +13,14 @@ class CommentPost extends Component {
         super(props)
         this.state = {
             comment: "",
-            showComment: ""
+            showComment: "",
+            loading: true
         }
     }
 
     componentDidMount(){
         let postId = this.props.match.params.id;
         const api = `https://teamy-api.herokuapp.com/api/v1/posts/${postId}/comment`;
-
         fetch(api, {
             method: "GET",
             mode: "cors",
@@ -33,7 +33,8 @@ class CommentPost extends Component {
             .then(data => {
                 console.log(data);
                 this.setState({
-                    showComment: data.data
+                    showComment: data.data,
+                    loading: false
                 })
             // document.location.reload();
             })
@@ -86,26 +87,32 @@ class CommentPost extends Component {
                 </div>
             )
         })
-        return (
-            <div className="comment-container">
-                <p>Comments</p>
-                <div>
-                    {comment}
+
+        if(this.state.loading){
+            return <p className="loader"></p>
+        }
+           return (
+    
+                <div className="comment-container">
+                    <p>Comments</p>
+                    <div>
+                        {comment}
+                    </div>
+                    <div className="post-comment-div">
+                        <form>
+                            <label>Post a Comment
+                                <span className="required-star"> *</span>
+                            </label>
+                            <input type="text" name="comment" value={this.state.comment} onChange={this.handleChange} />
+                            <div className="btn-div">
+                                <button type="submit" className="btn" onClick={this.handleSubmit}>post</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                <div className="post-comment-div">
-                    <form>
-                        <label>Post a Comment
-                            <span className="required-star"> *</span>
-                        </label>
-                        <input type="text" name="comment" value={this.state.comment} onChange={this.handleChange} />
-                        <div className="btn-div">
-                            <button type="submit" className="btn" onClick={this.handleSubmit}>post</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        )
+            )
+        }
     }
-}
+
 
 export default withRouter(CommentPost);

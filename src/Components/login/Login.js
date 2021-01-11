@@ -29,9 +29,6 @@ async function checkSignIn(arr, props) {
 
         console.log(response);
         if(response.message === "Login succesfull"){
-            setTimeout(() => {
-                alert('Login successfull')
-            }, 200)
           window.localStorage.setItem('token', response.token)
           props.history.push('/posts')
         }else{
@@ -66,6 +63,9 @@ function Login(props) {
     <div className="login-container">
       <div className="header">
         <Header />
+      </div>
+      <div className="title-div">
+        <p>Login account</p>
       </div>
       <div className="login-form">
       <Formik

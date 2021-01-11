@@ -1,6 +1,6 @@
 import React, { Component} from 'react';
 import dayjs from 'dayjs';
-import Header from '../../header/Header';
+import Header2 from '../../header/Header2';
 import { Link } from "react-router-dom";
 import {checkToken} from "../../checkToken"
 import EditPost from './EditPost';
@@ -19,11 +19,14 @@ class Posts extends Component {
         super(props)
         this.state ={
             posts: [],
-            loaded: ''
+            loading: false
         }
     }
 
     componentDidMount(){
+        this.setState({
+            loading: true
+        })
         fetch(api, {
             method: "GET",
             headers: {
@@ -35,7 +38,8 @@ class Posts extends Component {
             .then(data => {
                 console.log(data);
                 this.setState({
-                    posts: data.data
+                    posts: data.data,
+                    loading: false
                 })
             })
             .catch(err => err);
@@ -79,11 +83,11 @@ class Posts extends Component {
     })
     return (
         <div>
-            <Header />
+            <Header2 />
             <div className="make-post-div">
                 <p id="make-post">
                     <Link to='/write-post' style={{ textDecoration: 'none' }} className="link-class">
-                        Welcome Amaka, any updates?
+                        Welcome, any updates?
                     </Link>
                 </p>
                 <p className="gif-div">
@@ -93,7 +97,8 @@ class Posts extends Component {
             <div className="bg-img">
                 <div className="bg-color">
                     <div className="post-container">
-                        {post} 
+                        {this.state.loading ? <p className="loader"></p> : post}
+                        {/* {post}  */}
                     </div>
                 </div>
             </div>

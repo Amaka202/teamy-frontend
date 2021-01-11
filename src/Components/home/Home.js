@@ -22,8 +22,8 @@ function Home() {
                 </div>
                 <div className="signup-user">
                     <p>
-                        Are you an admin?
-                    <NavLink to='/signup'> Create a user</NavLink>
+                        Dont have an account yet?
+                    <NavLink to='/signup'> Create an account</NavLink>
                     </p>
                 </div>
             </div>

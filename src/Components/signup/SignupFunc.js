@@ -27,10 +27,6 @@ async function signupFunc(arr, props ) {
 
         console.log(response);
         if(response.message === "user sign up successful"){
-            setTimeout(() => {
-                alert('user sign up successfull')
-            }, 200)
-            console.log(props);
             props.history.push('/posts')
         }else{
             setTimeout(() => {

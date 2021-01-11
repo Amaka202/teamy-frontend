@@ -13,6 +13,7 @@ import NotFound from './Components/NotFound';
 import WriteArticle from './Components/posts/postsJSFiles/WriteArticle';
 // import CommentPost from './Components/posts/CommentPost';
 import Post from './Components/posts/postsJSFiles/Post';
+import LogOut from './Components/login/LogOut';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Redirect from='/teamy-frontend' to="/" />
           <Route path='/' exact component={Home} />
           <Route path='/login' exact component={Login} />
+          <Route path='/logout' exact component={LogOut} />
           <Route path='/posts' exact component={Posts} />
           <Route path='/signup' exact component={Signup} />
           <Route path='/users' exact component={Users} />
