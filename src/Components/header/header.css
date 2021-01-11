@@ -29,7 +29,7 @@
 }
 
 .nav-container .active{
-  border-bottom: 4px solid #D3EC8E;
+  border-bottom: 4px solid #68E1FD;
   /* font-weight: bold; */
 }
 
@@ -42,12 +42,12 @@
 .logo-container p{
   padding-top: 0;
   font-size: 1.5em;
-  background: -webkit-linear-gradient(rgb(253, 253, 253), rgb(240, 240, 84), rgb(211, 43, 43));
+  background: -webkit-linear-gradient(rgb(226, 20, 20),#68E1FD,#697072);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .logo-container svg>path{
-  fill:rgb(211, 236, 142);
+  fill:#68E1FD;
 }
 
