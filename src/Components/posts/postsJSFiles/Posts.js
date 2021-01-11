@@ -19,7 +19,8 @@ class Posts extends Component {
         super(props)
         this.state ={
             posts: [],
-            loading: false
+            loading: false,
+            commentsNumber: 0
         }
     }
 
@@ -72,7 +73,9 @@ class Posts extends Component {
                 </div>
                 <div className="del-comm-div">
                     <Link to={`/posts/${val.id}`} style={{ textDecoration: 'none' }} >
-                        <p>{element}</p>
+                        <p>{element}
+                            {/* <sup>{this.state.commentsNumber}</sup> */}
+                        </p>
                     </Link>
                     <EditPost />
                     <DeletePost />                          

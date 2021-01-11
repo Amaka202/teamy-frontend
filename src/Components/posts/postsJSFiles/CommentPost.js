@@ -14,7 +14,8 @@ class CommentPost extends Component {
         this.state = {
             comment: "",
             showComment: "",
-            loading: true
+            loading: true,
+            commentLen: 0
         }
     }
 
@@ -34,6 +35,7 @@ class CommentPost extends Component {
                 console.log(data);
                 this.setState({
                     showComment: data.data,
+                    commentLen: data.data.length,
                     loading: false
                 })
             // document.location.reload();
@@ -94,7 +96,7 @@ class CommentPost extends Component {
            return (
     
                 <div className="comment-container">
-                    <p>Comments</p>
+                    <p>{this.state.commentLen} Comments</p>
                     <div>
                         {comment}
                     </div>
