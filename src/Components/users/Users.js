@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Header from '../header/Header';
+import Header2 from '../header/Header2';
 import {checkToken} from "../checkToken"
 import "./users.css"
 
@@ -10,7 +10,8 @@ export default class Users extends Component {
     constructor(props){
         super(props)
         this.state = {
-            users: []
+            users: [],
+            loading: true
         }
     }
 
@@ -26,7 +27,8 @@ export default class Users extends Component {
             .then(data => {
                 console.log(data);
                 this.setState({
-                    users: data.data
+                    users: data.data,
+                    loading: false
                 })
             })
             .catch(err => err);
@@ -34,6 +36,9 @@ export default class Users extends Component {
 
     render() {
         console.log(this.state);
+        if(this.state.loading){
+            return <p className="loader"></p>
+        }
         const user = this.state.users.map(val => {
             return (
                 <div className="user" key={val.id}>
@@ -55,7 +60,7 @@ export default class Users extends Component {
         })
         return (
             <div className="members-container">
-             <Header />
+             <Header2 />
              <p id="users-heading">Team Members</p>
              <div className="users-container">
                  {user}

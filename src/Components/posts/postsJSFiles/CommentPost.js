@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 import '../postStyleFiles/commentpost.css'
 import { withRouter } from 'react-router-dom'
 import {checkToken} from '../../checkToken'
+import dayjs from 'dayjs';
+
+var relativeTime = require('dayjs/plugin/relativeTime')
+dayjs.extend(relativeTime)
 
 
 class CommentPost extends Component {
@@ -9,8 +13,32 @@ class CommentPost extends Component {
         super(props)
         this.state = {
             comment: "",
-            showComment: ""
+            showComment: "",
+            loading: true
         }
+    }
+
+    componentDidMount(){
+        let postId = this.props.match.params.id;
+        const api = `https://teamy-api.herokuapp.com/api/v1/posts/${postId}/comment`;
+        fetch(api, {
+            method: "GET",
+            mode: "cors",
+            headers: {
+                "content-type" : "application/json",
+                Authorization: `Bearer ${checkToken()}`
+            },
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                this.setState({
+                    showComment: data.data,
+                    loading: false
+                })
+            // document.location.reload();
+            })
+            .catch(err => console.log(err));
     }
 
     handleChange = (e) => {
@@ -39,32 +67,52 @@ class CommentPost extends Component {
         })
             .then(res => res.json())
             .then(data => {
-                this.setState({
-                    showComment: data
-                })
+                console.log(data);
+            document.location.reload();
             })
             .catch(err => console.log(err));
     }
     render() {
-        console.log(this.state.showComment);
-        return (
-            <div className="comment-container">
-                <p>Comments</p>
-                {/* {comment} */}
-                <div className="post-comment-div">
-                    <form>
-                        <label>Post a Comment
-                            <span className="required-star"> *</span>
-                        </label>
-                        <input type="text" name="comment" value={this.state.comment} onChange={this.handleChange} />
-                        <div className="btn-div">
-                            <button type="submit" className="btn" onClick={this.handleSubmit}>post</button>
-                        </div>
-                    </form>
+        const comment = this.state.showComment && this.state.showComment.map(val => {
+            return (
+                <div className="show-comment-div" key={val.id}>
+                    <div className="comm-img-div">
+                        <img src={val.profile_img ? val.profile_img : `https://res.cloudinary.com/amaka01/image/upload/v1609578087/cg3mtemxniugidu73ewn.jpg`} alt="dp"/>
+                    </div>
+                    <div className="comm-div">
+                        <p>{val.firstname} {val.lastname}  <span>{dayjs(val.createdat).fromNow()}</span>
+                        </p>
+                        <p>{val.comment}</p>
+                    </div>
                 </div>
-            </div>
-        )
+            )
+        })
+
+        if(this.state.loading){
+            return <p className="loader"></p>
+        }
+           return (
+    
+                <div className="comment-container">
+                    <p>Comments</p>
+                    <div>
+                        {comment}
+                    </div>
+                    <div className="post-comment-div">
+                        <form>
+                            <label>Post a Comment
+                                <span className="required-star"> *</span>
+                            </label>
+                            <input type="text" name="comment" value={this.state.comment} onChange={this.handleChange} />
+                            <div className="btn-div">
+                                <button type="submit" className="btn" onClick={this.handleSubmit}>post</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            )
+        }
     }
-}
+
 
 export default withRouter(CommentPost);

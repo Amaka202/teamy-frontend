@@ -1,5 +1,6 @@
 import React, { Component} from 'react';
-import Header from '../../header/Header';
+import dayjs from 'dayjs';
+import Header2 from '../../header/Header2';
 import { Link } from "react-router-dom";
 import {checkToken} from "../../checkToken"
 import EditPost from './EditPost';
@@ -8,6 +9,8 @@ import '../postStyleFiles/posts.css';
 import gifIcon from '../postImgs/gifIcon.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faComment } from '@fortawesome/free-solid-svg-icons'
+var relativeTime = require('dayjs/plugin/relativeTime')
+dayjs.extend(relativeTime)
 
 const api = 'https://teamy-api.herokuapp.com/api/v1/posts';
 
@@ -16,11 +19,14 @@ class Posts extends Component {
         super(props)
         this.state ={
             posts: [],
-            loaded: ''
+            loading: false
         }
     }
 
     componentDidMount(){
+        this.setState({
+            loading: true
+        })
         fetch(api, {
             method: "GET",
             headers: {
@@ -32,7 +38,8 @@ class Posts extends Component {
             .then(data => {
                 console.log(data);
                 this.setState({
-                    posts: data.data
+                    posts: data.data,
+                    loading: false
                 })
             })
             .catch(err => err);
@@ -46,14 +53,14 @@ class Posts extends Component {
         <div className="pic-name-div">
             <div className="img=flex">
                 <div className="post-img-div">
-                    <img src={`https://res.cloudinary.com/amaka01/image/upload/v1609578087/cg3mtemxniugidu73ewn.jpg`} alt="dp"/>
+                    <img src={val.profile_img ? val.profile_img : `https://res.cloudinary.com/amaka01/image/upload/v1609578087/cg3mtemxniugidu73ewn.jpg`} alt="dp"/>
                 </div>
             </div>
             <div className="name-article-div">
                 <div>
                     <div className="name-div">
                         <p>{val.firstname.toUpperCase()} {val.lastname.toUpperCase()}
-                            <span>8:30pm</span>
+                            <span>{dayjs(val.createdat).fromNow()}</span>
                         </p>
                     </div>
                     <div className="article">
@@ -76,11 +83,11 @@ class Posts extends Component {
     })
     return (
         <div>
-            <Header />
+            <Header2 />
             <div className="make-post-div">
                 <p id="make-post">
                     <Link to='/write-post' style={{ textDecoration: 'none' }} className="link-class">
-                        Welcome Amaka, any updates?
+                        Welcome, any updates?
                     </Link>
                 </p>
                 <p className="gif-div">
@@ -90,7 +97,8 @@ class Posts extends Component {
             <div className="bg-img">
                 <div className="bg-color">
                     <div className="post-container">
-                        {post} 
+                        {this.state.loading ? <p className="loader"></p> : post}
+                        {/* {post}  */}
                     </div>
                 </div>
             </div>

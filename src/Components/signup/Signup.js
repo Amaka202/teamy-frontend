@@ -17,15 +17,12 @@ function Signup(props) {
     jobrole:"",
     location: ""
   }
-
-  useEffect(()=>{
-    console.log(props.history)
-  })
+  
   const onSubmit = (values, submitProps) => {
     
     console.log("form value", values)
     signupFunc(values, props);
-    submitProps.resetForm()
+    // submitProps.resetForm()
   }
 
   const validationSchema = Yup.object({
@@ -41,7 +38,10 @@ function Signup(props) {
 
   return (
     <div className="signup-container">
-    <Header />      
+    <Header /> 
+    <div className="title-div">
+      <p>Create an account</p>
+    </div>     
     <div className="signup-form">
       <Formik
       initialValues={initialValues}
