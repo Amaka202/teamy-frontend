@@ -1,3 +1,7 @@
+Teamy is an internal social network for employees of an organization. This application is to be used to facilitate more interaction between colleagues and promote team bonding. This repo contains the code for the frontend. Built with React and Reach Hook for state management.
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
